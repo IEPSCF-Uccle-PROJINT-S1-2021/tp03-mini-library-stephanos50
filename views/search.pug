@@ -1,0 +1,51 @@
+
+doctype html
+html
+  head
+    title Search
+    style
+      include ../public/css/bootstrap.css
+
+  body
+  div.container
+    h1 Mini Bibliotheque
+    hr
+    form.form-group(action="list", method="post")
+      select(name='name')
+        option(value="") Choose...
+        option(value='fantasy') Fantasy
+        option(value='autobiographie') Autobiographie
+        option(value='roman historique') Roman historique
+      br
+      br
+      input.btn.btn-sm.btn-outline-dark(type='submit', value='Allez')
+    hr
+    h4 Quelques suggestions...
+    hr
+    table.table.table-hover.table-sm
+      thead.thead-dark
+        tr
+          th Auteur
+          th Titre
+          th Catégorie
+      tbody
+      each liste in listes
+        tr
+          td #{liste.author}
+          td #{liste.title}
+          td #{liste.category}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title List
+    style
+      include ../public/css/bootstrap.css
+
+  body
+  div.container
+    h1 Mini Bibliotheque
+    hr
+    h4 Nos ouvrages #{name}
+    table.table.table-hover.table-sm
+      thead.thead-dark
+        tr
+          th Auteur
+          th Titre
+          th Catégorie
+      tbody
+      each liste in listes
+        tr
+          td #{liste.author}
+          td #{liste.title}
+          td #{liste.category}
+    a.btn.btn-sm.btn-outline-dark( href="search" ) Retour

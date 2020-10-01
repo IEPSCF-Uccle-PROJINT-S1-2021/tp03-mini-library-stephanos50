@@ -23,7 +23,7 @@ road.post('/books/list', (req,res) => {
   const name = req.body.name;
   let listes = books.categorie(name);
   res.render("list", {
-    title: name,
+    name: name,
     listes: listes
   });
 });

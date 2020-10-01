@@ -9,17 +9,22 @@ html
   div.container
     h1 Mini Bibliotheque
     hr
-    h4 Nos ouvrages #{name}
-    table.table.table-hover.table-sm
-      thead.thead-dark
-        tr
-          th Auteur
-          th Titre
-          th Catégorie
-      tbody
-      each liste in listes
-        tr
-          td #{liste.author}
-          td #{liste.title}
-          td #{liste.category}
-    a.btn.btn-sm.btn-outline-dark( href="search" ) Retour
+    if name
+      h4 Nos livres: catégorie-#{name}
+      table.table.table-hover.table-sm
+        thead.thead-dark
+          tr
+            th Auteur
+            th Titre
+            th Catégorie
+        tbody
+        each liste in listes
+          tr
+            td #{liste.author}
+            td #{liste.title}
+            td #{liste.category}
+      a.btn.btn-sm.btn-outline-dark( href="search" ) Retour
+    else
+      h4 Séléctionnez une catégorie
+      a.btn.btn-sm.btn-outline-dark( href="search" ) Retour
+
